@@ -42,4 +42,4 @@ jobs:
       run: composer update --${{ matrix.dependency-version }} --no-interaction --prefer-dist
 
     - name: Integration Tests
-      run: vendor/bin/pest --coverage --min=100
+      run: composer test:unit

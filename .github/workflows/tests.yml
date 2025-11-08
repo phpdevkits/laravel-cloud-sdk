@@ -24,7 +24,7 @@ jobs:
       with:
         php-version: ${{ matrix.php }}
         extensions: dom, mbstring, zip, fileinfo
-        coverage: pcov
+        coverage: ${{ matrix.os == 'windows-latest' && 'none' || 'pcov' }}
 
     - name: Get Composer cache directory
       id: composer-cache
@@ -49,5 +49,10 @@ jobs:
     - name: Install Composer dependencies
       run: composer update --${{ matrix.dependency-version }} --no-interaction --prefer-dist
 
-    - name: Tests
+    - name: Tests (with coverage)
+      if: matrix.os != 'windows-latest'
       run: composer test:unit
+
+    - name: Tests (without coverage)
+      if: matrix.os == 'windows-latest'
+      run: vendor/bin/pest

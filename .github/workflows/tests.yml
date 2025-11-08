@@ -38,6 +38,14 @@ jobs:
         key: dependencies-php-${{ matrix.php }}-os-${{ matrix.os }}-version-${{ matrix.dependency-version }}-composer-${{ hashFiles('composer.json') }}
         restore-keys: dependencies-php-${{ matrix.php }}-os-${{ matrix.os }}-version-${{ matrix.dependency-version }}-composer-
 
+    - name: Install aspell (Ubuntu only)
+      if: matrix.os == 'ubuntu-latest'
+      run: sudo apt-get update && sudo apt-get install -y aspell aspell-en
+
+    - name: Install aspell (macOS only)
+      if: matrix.os == 'macos-latest'
+      run: brew install aspell
+
     - name: Install Composer dependencies
       run: composer update --${{ matrix.dependency-version }} --no-interaction --prefer-dist
 

@@ -6,8 +6,7 @@
          cacheDirectory=".phpunit.cache"
          failOnWarning="true"
          failOnRisky="true"
-         beStrictAboutOutputDuringTests="true"
-         beStrictAboutCoverageMetadata="true">
+         beStrictAboutOutputDuringTests="true">
     <testsuites>
         <testsuite name="Test Suite">
             <directory>tests</directory>

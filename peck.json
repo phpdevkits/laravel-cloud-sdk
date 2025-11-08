@@ -1,0 +1,22 @@
+{
+    "preset": "base",
+    "ignore": {
+        "words": [
+            "php",
+            "laravel",
+            "cloud",
+            "sdk",
+            "saloon",
+            "api",
+            "phpdevkits",
+            "barrento",
+            "aws",
+            "param",
+            "pcov"
+        ],
+        "paths": [
+            "docs",
+            "vendor"
+        ]
+    }
+}

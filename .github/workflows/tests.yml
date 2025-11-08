@@ -24,7 +24,7 @@ jobs:
       with:
         php-version: ${{ matrix.php }}
         extensions: dom, mbstring, zip, fileinfo
-        coverage: none
+        coverage: pcov
 
     - name: Get Composer cache directory
       id: composer-cache
@@ -42,4 +42,4 @@ jobs:
       run: composer update --${{ matrix.dependency-version }} --no-interaction --prefer-dist
 
     - name: Integration Tests
-      run: php ./vendor/bin/pest
+      run: vendor/bin/pest --coverage --min=100

@@ -12,7 +12,8 @@
             "barrento",
             "aws",
             "param",
-            "pcov"
+            "pcov",
+            "js"
         ],
         "paths": [
             "docs",

@@ -64,7 +64,7 @@
             "@test:lint",
             "@test:type-coverage",
             "@test:typos",
-            "@test:unit",
+            "pest",
             "@test:types",
             "@test:refactor"
         ]

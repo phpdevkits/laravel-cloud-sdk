@@ -9,11 +9,8 @@
          beStrictAboutOutputDuringTests="true"
          beStrictAboutCoverageMetadata="true">
     <testsuites>
-        <testsuite name="Unit">
-            <directory>tests/Unit</directory>
-        </testsuite>
-        <testsuite name="Architecture">
-            <directory>tests/Arch</directory>
+        <testsuite name="Test Suite">
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
     <source>

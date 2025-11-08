@@ -24,7 +24,7 @@ jobs:
       with:
         php-version: ${{ matrix.php }}
         extensions: dom, mbstring, zip, fileinfo
-        coverage: ${{ matrix.os == 'windows-latest' && 'none' || 'pcov' }}
+        coverage: xdebug
 
     - name: Get Composer cache directory
       id: composer-cache
